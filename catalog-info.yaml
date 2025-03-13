@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ihq5tbneo-go-gitops
+  description: This is GitOps manifest for ihq5tbneo-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ihq5tbneo-go
+    backstage.io/kubernetes-id: ihq5tbneo-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ihq5tbneo-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ihq5tbneo-go
